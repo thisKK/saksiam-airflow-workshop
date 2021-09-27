@@ -2,6 +2,7 @@ from airflow import DAG
 from airflow.operators.dummy import DummyOperator
 from airflow.utils import timezone
 
+
 default_args = {
     "ownner" : "kay",
     "start_date": timezone.datetime(2021, 9, 27)
@@ -12,6 +13,7 @@ with DAG(
     default_args=default_args,
     schedule_interval=None,
     tags=['homework'],
+     catchup=False,
 ) as dag:
 
     one = DummyOperator(task_id="1")
