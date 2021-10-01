@@ -13,7 +13,7 @@ with DAG(
     default_args=default_args,
     schedule_interval=None,
     tags=['homework'],
-     catchup=False,
+    catchup=False,
 ) as dag:
 
     one = DummyOperator(task_id="1")
